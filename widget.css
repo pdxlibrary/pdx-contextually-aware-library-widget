@@ -1,0 +1,50 @@
+#library_widget a {text-decoration:none;}
+#library_widget a:hover {text-decoration:underline;}
+
+#library_widget li.subject_link {
+    cursor: pointer;
+    padding:2px 0;
+    list-style-type: none;
+    font-size: 1em;
+}
+
+#library_widget ul.research_guides_block {
+	padding-left: 0;
+	border: 1px solid #CCCCCC;
+	background: none repeat scroll 0 0 #EEEEEE;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+#library_widget a.toggle_button {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    color: #666666;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin: 1px 6px auto 3px;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    width: 15px;
+}
+
+#library_widget a.toggle_button:hover { text-decoration:none; }
+
+
+#library_widget span.toggletext {
+  cursor: pointer;
+}
+
+#library_widget ul.guide_links li {
+  margin:3px 3px 3px 26px;
+  list-style-type:disc;
+}
+  
+#library_widget ul.guide_links {
+  margin: 6px 0;
+  padding: 0;
+  line-height 1.5em;
+}
