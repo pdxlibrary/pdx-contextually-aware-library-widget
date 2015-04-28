@@ -43,7 +43,7 @@ define("DISPLAY_CONTACT_INFO",true);
 
 
 
-/* cachine options */
+/* caching options */
 
 define("USE_CACHE",true);			// true = use caching, false = don't use caching
 define("CACHE_TYPE","memcache");	// database or memcache

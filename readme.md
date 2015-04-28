@@ -27,7 +27,8 @@ define("DISPLAY_CONTACT_INFO",true);
 ```
 
 ## Caching (Optional)
-There are currently two methods of caching built-in: Memcache OR Database. If you have access to either memcache or mysql, you can greatly reduce processing time by caching the output. The default caching period is 1 day.
+
+There are currently two methods of caching built-in: Memcache OR Database. If you have access to either memcache or mysql, you can greatly reduce processing time by caching the output. If turned on, the default caching period is 1 day.
 
 ```php
 
