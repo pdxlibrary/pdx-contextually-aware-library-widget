@@ -26,8 +26,8 @@ define("DISPLAY_CONTACT_INFO",true);
 
 ```
 
-## Caching (Optional) - there are currently two methods of caching built-in: Memcache OR Database. If you have access to either memcache or mysql, you can greatly reduce processing time by caching the output.
-The default caching period is 1 day.
+## Caching (Optional)
+There are currently two methods of caching built-in: Memcache OR Database. If you have access to either memcache or mysql, you can greatly reduce processing time by caching the output. The default caching period is 1 day.
 
 ```php
 
@@ -61,13 +61,9 @@ In D2L, you can make a widget box and add something like the following as the so
 
 ```
 
-```
-
 Where:
-//library.pdx.edu/d2l/widget.css is the path to the widget.css file you’ve placed on a server
-//library.pdx.edu/d2l/widget.php is the path to the widget.php file you’ve placed on a server
-
-```
+library.pdx.edu/d2l/widget.css - the path to the widget.css file you’ve placed on a server
+library.pdx.edu/d2l/widget.php - the path to the widget.php file you’ve placed on a server
 
 ## Tokens
 
