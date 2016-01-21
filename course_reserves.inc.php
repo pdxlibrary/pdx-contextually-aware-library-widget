@@ -23,7 +23,22 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
-?>
 
-<a href="http://stats.lib.pdx.edu/d2l.php?course_code=<?php print($course_code); ?>&role_name=<?php print($role_name); ?>&url=http://library.pdx.edu/services/ask-a-librarian/" data-role="button" data-icon="arrow-r" data-iconpos="right" title="Library Research Help" target="_blank">Ask a Librarian</a>
-<a href="http://stats.lib.pdx.edu/d2l.php?course_code=<?php print($course_code); ?>&role_name=<?php print($role_name); ?>&url=http://library.pdx.edu" data-role="button" data-icon="arrow-r" data-iconpos="right" title="Visit the PSU Library Website" target="_blank">Visit the PSU Library Website</a>
+$eres = file_get_contents("http://library.pdx.edu/d2l/eres/widget.php?course_code=$course_code&role_name=".urlencode($role_name));
+
+if(strcmp($eres,''))
+{
+	/*
+	print("document.write('<ul data-role=\"listview\" data-inset=\"true\" data-dividertheme=\"b\" class=\"ui-listview ui-listview-inset ui-corner-all ui-shadow\">'); \n");
+	print("document.write('<li data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\" class=\"ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child ui-last-child ui-btn-up-a\">'); \n");
+	print("document.write('<div class=\"ui-btn-inner ui-li\">'); \n");
+	print("document.write('<div class=\"ui-btn-text\">$eres</div>'); \n");
+	print("document.write('<span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\">&nbsp;</span></div>'); \n");
+	print("document.write('</li>'); \n");
+	print("document.write('</ul>'); \n");
+	print("document.write('<br />'); \n");
+	*/
+	print($eres);
+}
+
+?>

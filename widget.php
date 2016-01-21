@@ -4,7 +4,7 @@
 
 Portland State University Library - Contextually-Aware Library Widget
 
-Copyright (c) 2012 Portland State University
+Copyright (c) 2012 Portland State University Library
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
 and associated documentation files (the "Software"), to deal in the Software without restriction, 
@@ -23,20 +23,19 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
-
-header("content-type:application/x-javascript");
+header('Access-Control-Allow-Origin: *');  
 
 require_once("config.inc.php");
 require_once("api_search.php");
 
 $course_code = $_GET['course_code'];
+//$course_code = "OFFERING_PSY-451-001_201404";
+
 $course_name = $_GET['course_name'];
 $role_name = $_GET['role_name'];
 
 
-
 /* Stats collection */
-
 // create the file log.txt and confirm the application has write access to it
 $filename = "log.txt";
 if(is_writable($filename))
@@ -47,20 +46,41 @@ if(is_writable($filename))
     fclose($handle);
 }
 
+
 ?>
 
-document.write('<div id="library_widget">\n');
+<link rel="stylesheet" href="//code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<style>
+.ui-content { padding: 0 5px;}
+.ui-btn-inner {font-size:12px; }
+.ui-body-c, .ui-overlay-c {background: transparent; background-image: none;}
+input.ui-input-text, textarea.ui-input-text {font-size: 12px;}
+.ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner { font-size: 12px; }
+</style>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//library.pdx.edu/d2l/js/jquery.mobile-1.3.2.js"></script>
+
+
+<body onload="parent.alter_iframe_height(document.body.scrollHeight);">
+
+<div id="library_widget" data-role="content">
 
 <?php
 
-if(DISPLAY_CATALOG_SEARCH)
-{
-	require_once("catalog_search_box.inc.php");
-}
 
 if(USE_LIBGUIDES)
 {
 	require_once("libguides.inc.php");
+}
+
+if(SHOW_COURSE_RESERVES)
+{
+	require_once("course_reserves.inc.php");
+}
+
+if(DISPLAY_CATALOG_SEARCH)
+{
+	require_once("catalog_search_box.inc.php");
 }
 
 if(DISPLAY_CONTACT_INFO)
@@ -70,4 +90,5 @@ if(DISPLAY_CONTACT_INFO)
 
 ?>
 
-document.write('</div>');
+</div>
+</body>

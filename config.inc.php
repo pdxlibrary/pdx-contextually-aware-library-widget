@@ -4,7 +4,7 @@
 
 Portland State University Library - Contextually-Aware Library Widget
 
-Copyright (c) 2012 Portland State University
+Copyright (c) 2012 Portland State University Library
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
 and associated documentation files (the "Software"), to deal in the Software without restriction, 
@@ -32,9 +32,10 @@ define("DISPLAY_CATALOG_SEARCH",true);
 
 // Set whether to display subject and/or course guides from LibGuides
 define("USE_LIBGUIDES",true);
+
 // Set the institutional ID for your LibGuides instance, if USE_LIBGUIDES set to true
 // The value for your IID can be found in the Admin Login URL for your LibGuides instance
-define("LIBGUIDES_IID","");
+define("LIBGUIDES_IID","752");
 
 
 // Set whether to display contact information
@@ -42,15 +43,18 @@ define("LIBGUIDES_IID","");
 define("DISPLAY_CONTACT_INFO",true);
 
 
+// Show Course Reserves
+define("SHOW_COURSE_RESERVES",true);
 
-/* caching options */
+
+/* cachine options */
 
 define("USE_CACHE",true);			// true = use caching, false = don't use caching
-define("CACHE_TYPE","memcache");	// database or memcache
+define("CACHE_TYPE","memcache");	// database, memcache or none
 
 // memcache server connection info
-define("CACHE_SERVER","");
-define("CACHE_PORT","");
+define("CACHE_SERVER","cache.lib.pdx.edu");
+define("CACHE_PORT","11211");
 // cache entries older than the cutoff are considered too stale, so fresh data will be pulled instead
 define("CACHE_CUTOFF",date("Y-m-d H:i:s",strtotime("1 day ago")));
 
